@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     }
 })
 
+
 export default function Balance({saldo,gastos}) {
  return (
     <View style={styles.container}>
@@ -56,7 +57,7 @@ export default function Balance({saldo,gastos}) {
             <Text style={styles.itemTitle}>Gastos</Text>
             <View style={styles.content}>
                 <Text style={styles.currencySymbol}>R$</Text>
-                <Text style={styles.balance}>{gastos}</Text>
+                <Text style={styles.expenses}>{gastos}</Text>
             </View>
         </View>
     </View>
