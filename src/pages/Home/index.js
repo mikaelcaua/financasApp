@@ -3,6 +3,7 @@ import { StyleSheet, Text, View,FlatList } from 'react-native';
 import Header from '../../components/Header';
 import Balance from '../../components/Balance';
 import Movements from '../../components/Movements';
+import Actions from '../../components/Actions';
 
 const styles = StyleSheet.create({
     container: {
@@ -46,7 +47,9 @@ export default function Home() {
     <View >
       <Header name = "Mikael Cauã Silva"/>
       <Balance saldo={'9550,00'} gastos={'397,00'}></Balance>
+      
 
+      <Actions/>
       <Text style={styles.title}>Últimas Movimentações</Text>
 
       <FlatList 
