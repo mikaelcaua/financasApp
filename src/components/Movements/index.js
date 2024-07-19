@@ -1,52 +1,17 @@
-import { View,Text,StyleSheet,TouchableOpacity} from 'react-native';
+import { View,Text,TouchableOpacity} from 'react-native';
 import { useState } from 'react';
-
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        marginBottom:24,
-        borderBottomWidth:0.5,
-        borderBottomColor:'#DADADA'
-    },
-    content:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        marginTop:2,
-        marginBottom:8
-    },
-    date:{
-        color:'#DADADA',
-        fontWeight:'bold'
-    },
-    label:{
-        fontWeight:'bold',
-        fontSize:16
-    },
-    value:{
-        fontSize:16,
-        color:'#2ecc71',
-        fontWeight:'bold'
-    },
-    expenses:{
-        fontSize:16,
-        color:'#e74c3c',
-        fontWeight:'bold'
-    },
-    skeleton:{
-        marginTop:6,
-        width:80,
-        height:10,
-        backgroundColor:"#DADADA",
-        borderRadius:8
-    }
-})
+import { styles } from './style';
+import {useNavigation} from '@react-navigation/native'
 
 
 
 export default function Movements({data}) {
-let [showValue,setShowValue] = useState(false)
+// let [showValue,setShowValue] = useState(false)
+let [showValue,setShowValue] = useState(true)
+let navigation = useNavigation()
  return (
-   <TouchableOpacity style={styles.container} onPress={()=> setShowValue(!showValue)}>
+//    <TouchableOpacity style={styles.container} onPress={()=> setShowValue(!showValue)}>
+     <TouchableOpacity style={styles.container} onPress={()=> navigation.navigate('Details',data)}>
         <Text style={styles.date}>{data.date}</Text>
         <View style={styles.content}>
             <Text style={styles.label}>
